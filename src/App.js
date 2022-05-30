@@ -5,8 +5,11 @@ import styles from './styles/global.scss';
 function App() {
   const [time, setTime] = useState(0);
   const [timer, setTimer] = useState(null);
+  const [active, setActive] = useState(false);
 
   const start = () => {
+    //if (!timer) {
+    setActive(true);
     setTimer(
       setInterval(() => {
         setTime((time) => time + 1);
@@ -15,7 +18,10 @@ function App() {
   };
 
   const stop = () => {
-    clearInterval(timer);
+    setActive(false);
+    if (timer) {
+      clearInterval(timer);
+    }
   };
 
   const reset = () => {
@@ -34,10 +40,10 @@ function App() {
     <div>
       <Timer time={time} />
       <article className={styles.article}>
-        <button className={styles.button} onClick={start}>
+        <button className={styles.button} onClick={start} disabled={active}>
           Start
         </button>
-        <button className={styles.button} onClick={stop}>
+        <button className={styles.button} onClick={stop} disabled={!active}>
           Stop
         </button>
         <button className={styles.button} onClick={reset}>

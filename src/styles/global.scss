@@ -44,7 +44,7 @@ button {
   transition: $transition;
 
   &:hover {
-    background: darken($color-success, 5%);
+    background: darken($color-success, 10%);
   }
 
   &.transparent {
@@ -53,5 +53,8 @@ button {
     &:hover {
       color: darken($color-light, 20%);
     }
+  }
+  &:disabled {
+    background: darken($color-light, 50%);
   }
 }

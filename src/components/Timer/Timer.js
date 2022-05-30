@@ -4,9 +4,9 @@ const Timer = ({ time }) => {
   const padTo2Digits = (num) => {
     return num.toString().padStart(2, '0');
   };
-  const convertMilliseconds = (num) => {
+  /*const convertMilliseconds = (num) => {
     return num.toString().slice(1, -1);
-  };
+  };*/
 
   const result = (milliseconds) => {
     let seconds = Math.floor(milliseconds / 1000);
@@ -15,7 +15,7 @@ const Timer = ({ time }) => {
 
     seconds = seconds % 60;
     minutes = minutes % 60;
-    const convertedMilliseconds = convertMilliseconds(milliseconds);
+    //const convertedMilliseconds = convertMilliseconds(milliseconds);
 
     /*const hours = parseInt((time / (1000 * 60 * 60)) % 24);
     const hoursText = hours.toString();
@@ -25,7 +25,7 @@ const Timer = ({ time }) => {
 
     return `${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(
       seconds
-    )}:${padTo2Digits(milliseconds)}`;
+    )}.${(milliseconds % 1000).toString().padStart(3, '0')}`;
   };
 
   //time.substr(0, 2);
