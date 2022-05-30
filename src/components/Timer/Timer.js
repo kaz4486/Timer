@@ -25,7 +25,7 @@ const Timer = ({ time }) => {
 
     return `${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(
       seconds
-    )}:${padTo2Digits(convertedMilliseconds)}`;
+    )}:${padTo2Digits(milliseconds)}`;
   };
 
   //time.substr(0, 2);

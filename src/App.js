@@ -7,12 +7,11 @@ function App() {
   const [timer, setTimer] = useState(null);
 
   const start = () => {
-    if (time === 0)
-      setTimer(
-        setInterval(() => {
-          setTime((time) => time + 1);
-        }, 1)
-      );
+    setTimer(
+      setInterval(() => {
+        setTime((time) => time + 1);
+      }, 1)
+    );
   };
 
   const stop = () => {
